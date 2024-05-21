@@ -3,10 +3,11 @@ import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
-import Signin from './pages/Signin'
-import Signout from './pages/Signout'
 import Profile from './pages/Profile'
 import Header from './Components/Header'
+import SignIn from './pages/SignIn'
+import SignUp from './pages/SignUp'
+
 function App() {
 
 
@@ -15,9 +16,9 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/sign-in' element={<SignIn />} />
+        <Route path='/sign-up' element={<SignUp />} />
         <Route path='/About' element={<About />} />
-        <Route path='/Sign-In' element={<Signin />} />
-        <Route path='/Sign-Out' element={<Signout />} />
         <Route path='/Profile' element={<Profile />} />
 
       </Routes>
