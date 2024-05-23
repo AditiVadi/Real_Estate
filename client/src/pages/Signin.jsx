@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { signInStart } from '../redux/user/userSlice';
 import { signInSuccess } from '../redux/user/userSlice';
 import { signInFailure } from '../redux/user/userSlice';
+import OAth from '../Components/OAth';
 
 export default function SignIn() {
   const [formData, setFormData] = useState({});
@@ -74,6 +75,7 @@ export default function SignIn() {
         >
         {loading ? 'Loading...' : 'Sign In'} 
         </button>
+        <OAth></OAth>
       </form>
       <div className='flex gap-2 mt-5'>
         <p>Dont have an account?</p>
