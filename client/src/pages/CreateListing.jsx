@@ -8,6 +8,8 @@ import {
 import { app } from '../firebase';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { FaRupeeSign } from 'react-icons/fa';
+
 
 export default function CreateListing() {
   const { currentUser } = useSelector((state) => state.user);
@@ -282,7 +284,7 @@ export default function CreateListing() {
               <div className='flex flex-col items-center'>
                 <p>Regular price</p>
                 {formData.type === 'rent' && (
-                  <span className='text-xs'>($ / month)</span>
+                  <span className='text-xs flex items-center'>(<FaRupeeSign className='text-xs  mx-0 font-semibold  flex flex-wrap items-center gap-4 sm:gap-6'/> / month)</span>
                 )}
               </div>
             </div>
@@ -302,7 +304,7 @@ export default function CreateListing() {
                   <p>Discounted price</p>
 
                   {formData.type === 'rent' && (
-                    <span className='text-xs'>($ / month)</span>
+                    <span className='text-xs flex items-center'>(<FaRupeeSign className='text-xs  mx-0 font-semibold  flex flex-wrap items-center gap-4 sm:gap-6'/> / month)</span>
                   )}
                 </div>
               </div>
