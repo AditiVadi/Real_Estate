@@ -8,7 +8,7 @@ import {
 } from '../redux/user/userSlice';
 import OAuth from '../Components/OAth';
 
-export default function SignIn() {
+export default function Signin() {
   const [formData, setFormData] = useState({});
   const { loading, error } = useSelector((state) => state.user);
   const navigate = useNavigate();
