@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { MdLocationOn } from 'react-icons/md';
 import { FaRupeeSign } from 'react-icons/fa';
+import React from 'react';
 
 
 export default function ListingItem({ listing }) {
@@ -30,10 +31,17 @@ export default function ListingItem({ listing }) {
           </p>
           <p className='text-slate-500 mt-2 font-semibold  flex items-center'>
           <FaRupeeSign className=' font-semibold text-sm flex flex-wrap items-center gap-4 sm:gap-6'/>
-            {listing.offer
-              ? listing.discountPrice.toLocaleString('en-US')
-              : listing.regularPrice.toLocaleString('en-US')}
-            {listing.type === 'rent' && ' / month'}
+          {listing.offer ? (
+            <React.Fragment>
+             
+             
+               {listing.regularPrice - listing.discountPrice}
+             
+            </React.Fragment>
+          ) : (
+            listing.regularPrice.toLocaleString('en-US')
+          )}
+          {listing.type === 'rent' && ' / month'}
           </p>
           <div className='text-slate-700 flex gap-4'>
             <div className='font-bold text-xs'>
